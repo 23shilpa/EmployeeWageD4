@@ -1,45 +1,28 @@
 package welcometoemployeewage;
 
 public class EmployeeWage {
-    public static void main(String[] args)
-    {
-        int IS_FULL_TIME =2;
-        int EMPLOYEE_RATE_PER_HOUR=0;
-        int employeehours=0;
-        int eployeewage =0;
-        int IS_PART_TIME=1;
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int EMP_RATE_PER_HOUR = 20;
+    public static void main(String[] args) {
 
-        double empcheck = Math.floor(Math.random()*10)%3;
+        int empHrs = 0;
+        int empWage = 0;
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-
-        if (empcheck == IS_PART_TIME)
-        {
-            employeehours = 8;
-
-        }
-        else
-        {
-            employeehours = 0;
-
-        }
-        int employeewage = employeehours * EMPLOYEE_RATE_PER_HOUR;
-        System.out.println(employeewage);
-
-        switch ((int) empcheck){
-            case 0:
-                employeehours=0;
+        switch (empCheck) {
+            case IS_PART_TIME:
+                empHrs = 4;
                 break;
-            case 1:
-                employeehours=4;
-                break;
-            case 2:
-                employeehours=8;
+            case IS_FULL_TIME:
+                empHrs = 8;
                 break;
             default:
-                System.out.println("Invalid Choice");
-                break;
+                empHrs = 0;
         }
-        employeewage = employeehours * EMPLOYEE_RATE_PER_HOUR;
-        System.out.println("employeewage");
+
+        empWage = empHrs * EMP_RATE_PER_HOUR;
+        System.out.println("Emp Wage: " + empWage);
+
     }
 }
